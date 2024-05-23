@@ -118,9 +118,10 @@ final class FrameProvider {
     switch monthsLayout {
     case .vertical:
       let monthHeight = heightOfMonth(month, monthHeaderHeight: monthHeaderHeight)
+      let interMonthSpacing = content.isOTNewCalendarView ? -daySize.height : content.interMonthSpacing
       return CGPoint(
         x: subsequentMonthOrigin.x,
-        y: subsequentMonthOrigin.y - content.interMonthSpacing - monthHeight)
+        y: subsequentMonthOrigin.y - interMonthSpacing - monthHeight)
 
     case .horizontal:
       return CGPoint(
@@ -142,9 +143,10 @@ final class FrameProvider {
       let previousMonthHeight = heightOfMonth(
         previousMonth,
         monthHeaderHeight: previousMonthHeaderHeight)
+      let interMonthSpacing = content.isOTNewCalendarView ? -daySize.height : content.interMonthSpacing
       return CGPoint(
         x: previousMonthOrigin.x,
-        y: previousMonthOrigin.y + previousMonthHeight + content.interMonthSpacing)
+        y: previousMonthOrigin.y + previousMonthHeight + interMonthSpacing)
 
     case .horizontal:
       return CGPoint(
