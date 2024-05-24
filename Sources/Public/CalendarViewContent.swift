@@ -121,10 +121,10 @@ public final class CalendarViewContent {
   /// Configures if use for OTNewCalendarView. The default value is `false`.
   ///
   /// - Parameters:
-  ///   - isOTNewCalendarView
+  ///   - isCustomizeForOTNewCalendarView
   /// - Returns: A mutated `CalendarViewContent` instance with a new inter-month-spacing value.
-  public func isOTNewCalendarView(_ isOTNewCalendarView: Bool) -> CalendarViewContent {
-    self.isOTNewCalendarView = isOTNewCalendarView
+  public func isCustomizeForOTNewCalendarView(_ isCustomizeForOTNewCalendarView: Bool) -> CalendarViewContent {
+    self.isCustomizeForOTNewCalendarView = isCustomizeForOTNewCalendarView
     return self
   }
 
@@ -393,7 +393,7 @@ public final class CalendarViewContent {
   private(set) var dayAspectRatio: CGFloat = 1
   private(set) var dayOfWeekAspectRatio: CGFloat = 1
   private(set) var interMonthSpacing: CGFloat = 0
-  private(set) var isOTNewCalendarView: Bool = false
+  private(set) var isCustomizeForOTNewCalendarView: Bool = false
   private(set) var monthDayInsets: NSDirectionalEdgeInsets = .zero
   private(set) var verticalDayMargin: CGFloat = 0
   private(set) var horizontalDayMargin: CGFloat = 0
