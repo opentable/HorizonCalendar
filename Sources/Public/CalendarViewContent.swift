@@ -98,7 +98,8 @@ public final class CalendarViewContent {
   ///   - dayOfWeekAspectRatio: The aspect ratio of each day-of-the-week view.
   /// - Returns: A mutated `CalendarViewContent` instance with a new day-of-the-week aspect ratio value.
   public func dayOfWeekAspectRatio(_ dayOfWeekAspectRatio: CGFloat) -> CalendarViewContent {
-    let validAspectRatioRange: ClosedRange<CGFloat> = 0.5...3
+    /// Changes for OTNewCalendarView, the default range was 0.5...3
+    let validAspectRatioRange: ClosedRange<CGFloat> = 0.1...3
     assert(
       validAspectRatioRange.contains(dayOfWeekAspectRatio),
       "A day-of-the-week aspect ratio of \(dayOfWeekAspectRatio) will likely cause strange calendar layouts. Only values between \(validAspectRatioRange.lowerBound) and \(validAspectRatioRange.upperBound) should be used.")
@@ -115,6 +116,16 @@ public final class CalendarViewContent {
   /// - Returns: A mutated `CalendarViewContent` instance with a new inter-month-spacing value.
   public func interMonthSpacing(_ interMonthSpacing: CGFloat) -> CalendarViewContent {
     self.interMonthSpacing = interMonthSpacing
+    return self
+  }
+
+  /// Configures if use for OTNewCalendarView. The default value is `false`.
+  ///
+  /// - Parameters:
+  ///   - isCustomizeForOTNewCalendarView
+  /// - Returns: A mutated `CalendarViewContent` instance with a new inter-month-spacing value.
+  public func isCustomizeForOTNewCalendarView(_ isCustomizeForOTNewCalendarView: Bool) -> CalendarViewContent {
+    self.isCustomizeForOTNewCalendarView = isCustomizeForOTNewCalendarView
     return self
   }
 
@@ -383,6 +394,8 @@ public final class CalendarViewContent {
   private(set) var dayAspectRatio: CGFloat = 1
   private(set) var dayOfWeekAspectRatio: CGFloat = 1
   private(set) var interMonthSpacing: CGFloat = 0
+  /// Changes for OTNewCalendarView
+  private(set) var isCustomizeForOTNewCalendarView: Bool = false
   private(set) var monthDayInsets: NSDirectionalEdgeInsets = .zero
   private(set) var verticalDayMargin: CGFloat = 0
   private(set) var horizontalDayMargin: CGFloat = 0
