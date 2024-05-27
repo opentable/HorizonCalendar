@@ -1,3 +1,15 @@
+# OpenTable changes
+
+## https://github.com/opentable/HorizonCalendar/pull/2
+- Update validAspectRatioRange of dayOfWeekAspectRatio to be 0.1 -- 3. Default was 0.5 -- 3.
+Sources/Public/CalendarViewContent.swift
+- Make past/future month row in same line with current month row.  
+Introduce a new Bool variable `isCustomizeForOTNewCalendarView` to toggle it.  
+Need to pin the dayOfWeek row when toggle it on.
+Sources/Internal/FrameProvider.swift  
+Sources/Public/CalendarViewContent.swift  
+Sources/Public/CalendarViewRepresentable.swift
+
 # HorizonCalendar
 A declarative, performant, calendar UI component that supports use cases ranging from simple date pickers all the way up to fully-featured calendar apps.
 
