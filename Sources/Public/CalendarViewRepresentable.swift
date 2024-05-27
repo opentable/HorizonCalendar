@@ -93,6 +93,7 @@ public struct CalendarViewRepresentable: UIViewRepresentable {
   fileprivate var dayAspectRatio: CGFloat?
   fileprivate var dayOfWeekAspectRatio: CGFloat?
   fileprivate var interMonthSpacing: CGFloat?
+  /// Changes for OTNewCalendarView
   fileprivate var isCustomizeForOTNewCalendarView: Bool?
   fileprivate var monthDayInsets: NSDirectionalEdgeInsets?
   fileprivate var verticalDayMargin: CGFloat?
@@ -147,6 +148,7 @@ public struct CalendarViewRepresentable: UIViewRepresentable {
       content = content.interMonthSpacing(interMonthSpacing)
     }
 
+    /// Changes for OTNewCalendarView
     if let isCustomizeForOTNewCalendarView {
       content = content.isCustomizeForOTNewCalendarView(isCustomizeForOTNewCalendarView)
     }

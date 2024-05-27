@@ -98,6 +98,7 @@ public final class CalendarViewContent {
   ///   - dayOfWeekAspectRatio: The aspect ratio of each day-of-the-week view.
   /// - Returns: A mutated `CalendarViewContent` instance with a new day-of-the-week aspect ratio value.
   public func dayOfWeekAspectRatio(_ dayOfWeekAspectRatio: CGFloat) -> CalendarViewContent {
+    /// Changes for OTNewCalendarView, the default range was 0.5...3
     let validAspectRatioRange: ClosedRange<CGFloat> = 0.1...3
     assert(
       validAspectRatioRange.contains(dayOfWeekAspectRatio),
@@ -393,6 +394,7 @@ public final class CalendarViewContent {
   private(set) var dayAspectRatio: CGFloat = 1
   private(set) var dayOfWeekAspectRatio: CGFloat = 1
   private(set) var interMonthSpacing: CGFloat = 0
+  /// Changes for OTNewCalendarView
   private(set) var isCustomizeForOTNewCalendarView: Bool = false
   private(set) var monthDayInsets: NSDirectionalEdgeInsets = .zero
   private(set) var verticalDayMargin: CGFloat = 0
